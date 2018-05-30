@@ -157,5 +157,6 @@ build
 
 ### Snapshots ###
 Debug
+spike
 
 # End of https://www.gitignore.io/api/c++,cmake,clion,clion+all
