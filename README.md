@@ -6,6 +6,7 @@ Battleship 게임의 C++ 구현이다.
 * doc : 프로젝트 설명 문서가 위치한다. 
 * include : 모든 header 파일이 위치한다.
 * lib : 정적 라이브러리가 위치한다.
+* ref : Battleship game 을 만들기 위해서 받은 기반 자료이다.
 * spike : gitignore 되어 있다. 순간 순간 떠오른 아이디어나 휘발성 높은 테스트를 작성한다.
 * src : _main.cpp_ 을 제외한 source 파일(`.cpp`)이 위치한다. _main.cpp_ 은 프로젝트 루트 바로 아래에 위치한다.
 
