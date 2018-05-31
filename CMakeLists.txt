@@ -20,7 +20,7 @@ SET ( SRC_FILES
 # 공통 컴파일러
 #SET ( CMAKE_C_COMPILER "<컴파일러>" )
 
-# 공통 헤더 파일 Include 디렉토리 (-I)
+# 공통 헤더 파일 include 디렉토리 (-I)
 #INCLUDE_DIRECTORIES ( <디렉토리> <디렉토리> ... )
 
 # 공통 컴파일 옵션, 링크 옵션
