@@ -85,6 +85,12 @@
 		<Unit filename="/home/user/문서/projects/battleship/src/domain/battleground.cpp">
 			<Option target="battleship-0.0.1.out"/>
 		</Unit>
+		<Unit filename="/home/user/문서/projects/battleship/src/domain/point.cpp">
+			<Option target="battleship-0.0.1.out"/>
+		</Unit>
+		<Unit filename="/home/user/문서/projects/battleship/src/domain/ship.cpp">
+			<Option target="battleship-0.0.1.out"/>
+		</Unit>
 		<Unit filename="/home/user/문서/projects/battleship/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

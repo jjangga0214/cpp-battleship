@@ -4,7 +4,7 @@
 
 #pragma once
 namespace bts {
-    namespace ctrlr {
+    namespace controller {
         class input_controller;
     }
 }

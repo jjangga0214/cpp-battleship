@@ -29,9 +29,8 @@ protected:
     virtual void color(const unsigned int COLOR_CODE) const;
 
 private:
-    domain::battleground attacker{8,8};
-    domain::battleground defender{8,8};
+    domain::battleground attacker;//{8,8};
+    domain::battleground defender;//{8,8};
 };
-
 
 

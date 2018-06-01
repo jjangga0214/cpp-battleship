@@ -5,6 +5,8 @@
 #pragma once
 
 #include "Eigen/Dense"
+#include <vector>
+#include "domain/ship.h"
 
 namespace bts {
     namespace domain {
@@ -15,8 +17,9 @@ namespace bts {
 
 class bts::domain::battleground {
 public:
-    battleground(unsigned int width = 8, unsigned int height = 8);
+    battleground(std::vector<ship> ships={}, unsigned int width = 8, unsigned int height = 8);
 
 private:
-    Eigen::Matrix2cd map;
+    Eigen::Matrix2cd hitmap; // cell 에 hit 여부를 기록한다.
+    std::vector<ship> ships;
 };

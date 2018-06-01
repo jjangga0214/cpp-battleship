@@ -3,7 +3,9 @@
 //
 
 #include "domain/battleground.h"
+#include "domain/ship.h"
 
-bts::domain::battleground::battleground(unsigned int width, unsigned int height) :map(width, height){
+bts::domain::battleground::battleground(std::vector<ship> ships, unsigned int width, unsigned int height)
+        : ships(ships), hitmap(width, height) {
 
 }

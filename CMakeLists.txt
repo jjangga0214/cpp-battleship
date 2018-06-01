@@ -20,6 +20,8 @@ SET ( SRC_FILES
         main.cpp
         ${SRC}/application.cpp
         ${SRC}/${DOMAIN}/battleground.cpp
+        ${SRC}/${DOMAIN}/point.cpp
+        ${SRC}/${DOMAIN}/ship.cpp
         )
 
 # 공통 컴파일러
