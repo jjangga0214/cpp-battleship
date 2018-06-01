@@ -20,6 +20,6 @@ public:
     battleground(std::vector<ship> ships={}, unsigned int width = 8, unsigned int height = 8);
 
 private:
-    Eigen::Matrix2cd hitmap; // cell 에 hit 여부를 기록한다.
+    Eigen::MatrixXd hitmap; // cell 에 hit 여부를 기록한다.
     std::vector<ship> ships;
 };

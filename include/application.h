@@ -13,15 +13,14 @@ namespace bts {
 class bts::application {
 
 public:
-    application(unsigned int GREEN_BLACK = 1, unsigned int CYAN_BLACK = 2, unsigned int YELLOW_BLACK = 3,
-                unsigned int RED_BLACK = 4);
+    application();
 
     virtual ~application();
 
-    const unsigned int GREEN_BLACK;
-    const unsigned int CYAN_BLACK;
-    const unsigned int YELLOW_BLACK;
-    const unsigned int RED_BLACK;
+    static const unsigned int GREEN_BLACK=1;
+    static const unsigned int CYAN_BLACK=2;
+    static const unsigned int YELLOW_BLACK=3;
+    static const unsigned int RED_BLACK=4;
 
 protected:
     virtual void config() const;

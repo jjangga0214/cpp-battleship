@@ -23,7 +23,7 @@ int main() {
 //    m2(1, 1) = m2(1, 0) + m2(0, 1);
 //    std::cout << m2 << std::endl;
 
-    //bts::application a;
+    bts::application a;
 //    std::unique_ptr<bts::domain::point2d> p = std::make_unique<bts::domain::point2d>(1, 2);
 //    std::vector<bts::domain::point2d> v;
 //    v.push_back(*p);
