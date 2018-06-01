@@ -14,8 +14,9 @@ Battleship 게임의 C++ 구현이다.
 ## 의존성 
 * ncurses
   * 우분투
+    libncurses-dev 는 기본, libncursesw5-dev 는 한글 지원용.
   ```
-  $ sudo apt-get install libncurses-dev
+  $ sudo apt-get install libncurses-dev libncursesw5-dev
   ```
 
 ## 빌드

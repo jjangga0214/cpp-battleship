@@ -1,5 +1,5 @@
 # 요구 CMake 최소 버전
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.10.3)
 
 # 프로젝트 이름 및 버전
 project(battleship)
@@ -13,8 +13,13 @@ SET ( CMAKE_VERBOSE_MAKEFILE true )
 SET ( OUTPUT_ELF
         "${CMAKE_PROJECT_NAME}-${PROJECT_VERSION}.out")
 
+SET( SRC src)
+SET( DOMAIN domain)
+
 SET ( SRC_FILES
         main.cpp
+        ${SRC}/application.cpp
+        ${SRC}/${DOMAIN}/battleground.cpp
         )
 
 # 공통 컴파일러
@@ -47,7 +52,13 @@ SET ( CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BUILD_TYPE}/lib )
 SET ( CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BUILD_TYPE}/lib )
 
 # 기타
-# SET(CMAKE_CXX_STANDARD 17)
+SET(CMAKE_CXX_STANDARD 17) # C++ 17을 사용할 것이라고 Cmake 에 알려줌.
+# include_directories => header file 의 참색 범위를 설정한다. 프로젝트 루트부터 탐색하지 않고 헤더파일을 간결하게 include 할 수 있게 한다.
+include_directories(${root_SOURCE_DIR}/include)
+include_directories(${root_SOURCE_DIR}/lib)
+include_directories( ${CMAKE_SOURCE_DIR}/lib
+        ${CMAKE_SOURCE_DIR}/include)
+
 
 # 빌드 대상 바이너리 추가
 ADD_EXECUTABLE( ${OUTPUT_ELF} ${SRC_FILES} )
