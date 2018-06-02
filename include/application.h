@@ -5,6 +5,7 @@
 
 #include <ncurses.h>
 #include "domain/battleground.h"
+#include "domain/ship.h"
 
 namespace bts {
     class application;
@@ -17,10 +18,10 @@ public:
 
     virtual ~application();
 
-    static const unsigned int GREEN_BLACK=1;
-    static const unsigned int CYAN_BLACK=2;
-    static const unsigned int YELLOW_BLACK=3;
-    static const unsigned int RED_BLACK=4;
+    static const unsigned int GREEN_BLACK = 1;
+    static const unsigned int CYAN_BLACK = 2;
+    static const unsigned int YELLOW_BLACK = 3;
+    static const unsigned int RED_BLACK = 4;
 
 protected:
     virtual void config() const;
@@ -28,8 +29,8 @@ protected:
     virtual void color(const unsigned int COLOR_CODE) const;
 
 private:
-    domain::battleground attacker;//{8,8};
-    domain::battleground defender;//{8,8};
+//    domain::battleground attacker;//{8,8};
+//    domain::battleground defender;//{8,8};// view 로 바꾼다.
+
+    domain::battleground battlefield;
 };
-
-

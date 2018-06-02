@@ -9,7 +9,9 @@
 #include <string>
 #include <memory>
 
-bts::domain::ship::ship(type kind, point2d start, point2d end) : kind(kind) {
+namespace bd = bts::domain;
+
+bd::ship::ship(bd::ship::type &kind, bd::point2d start, bd::point2d end) : kind(kind) {
     int xGap = end.x - start.x;
     int yGap = end.y - start.y;
     if ((xGap != 0 && std::abs(xGap) != kind.size)
@@ -25,13 +27,27 @@ bts::domain::ship::ship(type kind, point2d start, point2d end) : kind(kind) {
     }
 };
 
-bts::domain::ship::cell::cell(const point2d &coordinates) : coordinates(coordinates) {};
+bd::ship::cell::cell(const bd::point2d &coordinates) : coordinates(coordinates) {};
 
-
-bts::domain::ship::type::type(std::string name, char icon, unsigned int size) : name(name), icon(icon), size(size) {};
+bd::ship::type::type(std::string name, char icon, unsigned int size) : name(name), icon(icon), size(size) {};
 //bts::domain::ship::cell::cell(int x, int, y) : cell(point2d(x, y)) {};
 
 // enum 처럽 사용하기 위함이다.
-const bts::domain::ship::type bts::domain::ship::type::A = bts::domain::ship::type("ALPHA", 'A', 5);
-const bts::domain::ship::type bts::domain::ship::type::C = bts::domain::ship::type("BETA", 'B', 4);
-const bts::domain::ship::type bts::domain::ship::type::D = bts::domain::ship::type("GAMMER", 'C', 5);
+const bd::ship::type bd::ship::type::AIRCRAFT_CARRIER("AIRCRAFT_CARRIER", 'A', 5);
+const bd::ship::type bd::ship::type::BATTLESHIP("BATTLESHIP", 'B', 4);
+const bd::ship::type bd::ship::type::CRUISER("CRUISER", 'C', 3);
+const bd::ship::type bd::ship::type::DESTROYER("DESTROYER", 'D', 2);
+
+//const bd::ship::type bd::ship::type::VALUES = std::vector<const bd::ship::type>(0);
+//
+//const std::vector<std::unique_ptr<const bd::ship::type>> bd::ship::type::VALUES(
+//        {std::unique_ptr<const bd::ship::type>(&bd::ship::type::AIRCRAFT_CARRIER),
+//         std::unique_ptr<const bd::ship::type>(&bd::ship::type::BATTLESHIP),
+//         std::unique_ptr<const bd::ship::type>(&bd::ship::type::CRUISER),
+//         std::unique_ptr<const bd::ship::type>(&bd::ship::type::DESTROYER)});
+
+const std::vector<std::shared_ptr<const bd::ship::type>> bd::ship::type::VALUES(
+        {std::shared_ptr<const bd::ship::type>(&bd::ship::type::AIRCRAFT_CARRIER),
+         std::shared_ptr<const bd::ship::type>(&bd::ship::type::BATTLESHIP),
+         std::shared_ptr<const bd::ship::type>(&bd::ship::type::CRUISER),
+         std::shared_ptr<const bd::ship::type>(&bd::ship::type::DESTROYER)});

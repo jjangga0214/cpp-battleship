@@ -7,6 +7,7 @@
 #include "point.h"
 #include <vector>
 #include <string>
+#include <memory>
 
 namespace bts {
     namespace domain {
@@ -38,19 +39,31 @@ public:
          * private constructor 를 사용하는 이유도 compile time 에 몇개의 고정된 인스턴스만 제공하려는 의도이다.
          */
     private:
-        type(std::string name, char icon, unsigned int size);
+        explicit type(std::string name, char icon, unsigned int size);
+
     public:
-        static const type A;
-        static const type C;
-        static const type D;
+        //enum-like class 의 특성을 살리고, copy-assignment 관련 문제를 해결한다.
+        //enum-like 객체를 가리킬 땐, std::shared_ptr<type> 을 사용하자.
+        type(const type &) = delete;
+
+        type &operator=(const type &) = delete;
+
+        ~type() = default; //default
+
+        static const type AIRCRAFT_CARRIER;
+        static const type BATTLESHIP;
+        static const type CRUISER;
+        static const type DESTROYER;
+        static const std::vector<std::shared_ptr<const type>> VALUES;// = {AIRCRAFT_CARRIER, BATTLESHIP, CRUISER, DESTROYER};
 
         const std::string name;
         const char icon;
         const unsigned int size;
-
     };
-    const type kind;
-    ship(type kind, point2d start, point2d end);
+
+    const type &kind;
+
+    ship(type &kind, point2d start = point2d(), point2d end = point2d());
 
 private:
     std::vector<cell> cells{};

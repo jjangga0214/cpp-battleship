@@ -12,7 +12,7 @@ namespace bts {
 
 class bts::domain::point2d {
 public:
-    point2d(int x, int y) : x(x), y(y) {}
+    point2d(int x = 0, int y = 0) : x(x), y(y) {}
 
     bool operator==(point2d &other);
 

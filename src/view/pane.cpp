@@ -4,6 +4,6 @@
 
 #include "view/pane.h"
 
-void bts::view::pane::draw() {
+void bts::view::pane::draw() const{
 
 }

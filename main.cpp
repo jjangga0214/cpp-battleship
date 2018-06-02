@@ -5,6 +5,7 @@
 #include <vector>
 #include <bits/unique_ptr.h>
 #include "domain/point.h"
+#include <iostream>
 
 int main() {
 
@@ -33,5 +34,9 @@ int main() {
 //        std::cout << i.x;
 //    }
 
+    std::vector<int> vv = std::vector<int>(3);
+    for (auto &i: vv) {
+        std::cout << i;
+    }
     return 0;
 }

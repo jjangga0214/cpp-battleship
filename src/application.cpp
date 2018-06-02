@@ -4,8 +4,10 @@
 
 #include "application.h"
 #include <vector>
+#include "domain/ship.h"
 
 bts::application::application(){
+
     initscr(); // Curses 모드 시작
     start_color(); // Color 사용 선언
     config();
@@ -25,6 +27,7 @@ void bts::application::config() const {
     init_pair(bts::application::YELLOW_BLACK, COLOR_YELLOW, COLOR_BLACK);
     init_pair(bts::application::RED_BLACK, COLOR_RED, COLOR_BLACK);
 }
+
 
 void bts::application::color(const unsigned int COLOR_CODE) const {
     attron(COLOR_PAIR(COLOR_CODE));

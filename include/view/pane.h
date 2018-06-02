@@ -4,8 +4,10 @@
 
 #pragma once
 
-namespace bts::view {
-    class pane;
+namespace bts{
+    namespace view {
+        class pane;
+    }
 }
 
 class bts::view::pane {

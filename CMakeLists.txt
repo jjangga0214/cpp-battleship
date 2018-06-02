@@ -15,13 +15,15 @@ SET ( OUTPUT_ELF
 
 SET( SRC src)
 SET( DOMAIN domain)
+SET( VIEW view)
 
 SET ( SRC_FILES
         main.cpp
         ${SRC}/application.cpp
+        ${SRC}/${DOMAIN}/ship.cpp
         ${SRC}/${DOMAIN}/battleground.cpp
         ${SRC}/${DOMAIN}/point.cpp
-        ${SRC}/${DOMAIN}/ship.cpp
+        ${SRC}/${VIEW}/pane.cpp
         )
 
 # 공통 컴파일러
