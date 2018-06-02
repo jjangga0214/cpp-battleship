@@ -38,14 +38,6 @@ const bd::ship::type bd::ship::type::BATTLESHIP("BATTLESHIP", 'B', 4);
 const bd::ship::type bd::ship::type::CRUISER("CRUISER", 'C', 3);
 const bd::ship::type bd::ship::type::DESTROYER("DESTROYER", 'D', 2);
 
-//const bd::ship::type bd::ship::type::VALUES = std::vector<const bd::ship::type>(0);
-//
-//const std::vector<std::unique_ptr<const bd::ship::type>> bd::ship::type::VALUES(
-//        {std::unique_ptr<const bd::ship::type>(&bd::ship::type::AIRCRAFT_CARRIER),
-//         std::unique_ptr<const bd::ship::type>(&bd::ship::type::BATTLESHIP),
-//         std::unique_ptr<const bd::ship::type>(&bd::ship::type::CRUISER),
-//         std::unique_ptr<const bd::ship::type>(&bd::ship::type::DESTROYER)});
-
 const std::vector<std::shared_ptr<const bd::ship::type>> bd::ship::type::VALUES(
         {std::shared_ptr<const bd::ship::type>(&bd::ship::type::AIRCRAFT_CARRIER),
          std::shared_ptr<const bd::ship::type>(&bd::ship::type::BATTLESHIP),

@@ -23,12 +23,13 @@ public:
                  unsigned int width = 8, unsigned int height = 8, int default_hit = 0);
 
 protected:
-    void random_deploy(int default_hit = 0);
+    virtual void random_deploy();
 
-    void clear_hitmap(int default_hit = 0);
+    virtual void clear_hitmap();
 
-private:
+    int default_hit = 0;
     bool reflected = false;
     Eigen::MatrixXd hitmap; // coordinate 에 hit 여부를 기록한다.
     std::vector<bts::domain::ship> ships;
+
 };

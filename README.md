@@ -18,6 +18,7 @@ Battleship 게임의 C++ 구현이다.
   ```
   $ sudo apt-get install libncurses-dev libncursesw5-dev
   ```
+* [Eigen](https://eigen.tuxfamily.org/dox/GettingStarted.html) : Matrix 를 사용하기 위해 선형대수 라이브러리인 *Eigen*을 사용한다. 템플릿 라이브러리이므로 별도의 설치는 필요없다.  
 
 ## 빌드
 **CMAKE** 를 사용한다.
